@@ -25,7 +25,7 @@ const MyTable = ({ tableHead = [], tableContent = [] }) => {
         {tableContent.map((row, index) => (
           <TableRow key={index}>
             {Object.keys(row).map((key) => (
-              <TableBodyCell align="left">{row[key]}</TableBodyCell>
+              <TableBodyCell key={key} align="left">{row[key]}</TableBodyCell>
             ))}
           </TableRow>
         ))}
