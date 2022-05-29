@@ -9,7 +9,10 @@ const initialState = {
   dashboardUserList: {
     tableHead:["Sl No","Name","Email","Gender","Actions","Status"],
     tableContent: [],
-    pageNumber: 1,
+    pagination:{
+      pageNumber: 1,
+      totalLength: 100,
+    },
   },
 };
 
@@ -26,6 +29,14 @@ export default function dataReducer(state = initialState, action) {
         dashboardUserList: {
           ...state.dashboardUserList,
           tableContent: action.payload,
+        },
+      };
+    case DATA_TYPES.UPDATE_PAGENUMBER:
+      return {
+        ...state,
+        dashboardUserList: {
+          ...state.dashboardUserList,
+          pagination: action.payload,
         },
       };
     

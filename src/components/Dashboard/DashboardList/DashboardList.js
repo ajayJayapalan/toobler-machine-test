@@ -6,6 +6,8 @@ import { createStyles, makeStyles } from "@mui/styles";
 import AddUserButton from "./../AddUserButton/AddUserButton";
 import DashboardTable from "../DashBoardTable/DashboardTable";
 import { getDashboardUserList } from "../../../redux/actions/data-actions";
+import DashboardPagination from './../DashboardPagination/DashboardPagination';
+import { getDashboardStatistics } from './../../../redux/actions/data-actions';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -32,8 +34,12 @@ const DashboardList = () => {
     data: { dashboardUserList },
   } = useSelector((state) => state);
 
+  const updateList = (pageNumber = 1) => {
+    dispatch(getDashboardUserList(pageNumber));
+  }
+
   useEffect(() => {
-    dispatch(getDashboardUserList());
+    updateList(1)
     // eslint-disable-next-line
   }, []);
 
@@ -53,6 +59,13 @@ const DashboardList = () => {
         <DashboardTable
           tableHead={dashboardUserList.tableHead}
           tableContent={dashboardUserList.tableContent}
+        />
+      </Box>
+      <Box>
+        <DashboardPagination 
+          onClickPaginateItem = {updateList}
+          pageNumber={dashboardUserList.pagination.pageNumber}
+          totalLength={dashboardUserList.pagination.totalLength}
         />
       </Box>
     </Paper>

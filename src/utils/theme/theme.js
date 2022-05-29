@@ -23,7 +23,8 @@ export const theme = createTheme({
     glassyBg: "#ffffff50",
     glassyBorder: "#ffffff70",
 
-    white:"#fff",
+    white: "#fff",
+    overlay: "#35375E",
   },
   typography: {
     fontFamily: "Nunito",
