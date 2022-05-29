@@ -1,19 +1,23 @@
 import { useEffect, useState } from "react";
 import {
   buildStats,
-  generateStats,
   isEmailValid,
 } from "./../../../utils/helper/helper-function";
 import { useDispatch } from "react-redux";
 import { closeOverlay } from "../../../redux/actions/ui-actions";
 import { useSelector } from "react-redux";
-import { postNewUserData } from "../../../redux/actions/data-actions";
+import {
+  postNewUserData,
+  putUpdatedUserData,
+} from "../../../redux/actions/data-actions";
+import { BeatLoader } from "react-spinners";
 
 const useDashBoardForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [gender, setGender] = useState("");
-  const [isStatusActive, setIsStatusActive] = useState(null);
+  const [isStatusActive, setIsStatusActive] = useState(true);
+  const [isPosting, setIsPosting] = useState(false);
 
   const dispatch = useDispatch();
   const {
@@ -24,21 +28,18 @@ const useDashBoardForm = () => {
     userForm,
   } = useSelector((s) => s);
 
-  const handleClose = () => dispatch(closeOverlay());
+  const handleClose = () => {
+    dispatch(closeOverlay());
+  };
 
   const handleClear = () => {
     setName("");
     setEmail("");
     setGender("");
-    setIsStatusActive(null);
+    setIsStatusActive(true);
   };
 
-  const isAllValid = !!(
-    name &&
-    isEmailValid(email) &&
-    gender &&
-    isStatusActive !== null
-  );
+  const isAllValid = !!(name && isEmailValid(email) && gender);
 
   const onTextChange = (e, setState) => setState(e.target.value);
 
@@ -46,7 +47,8 @@ const useDashBoardForm = () => {
     setName(userForm.name);
     setEmail(userForm.email);
     setGender(userForm.gender);
-    setIsStatusActive(userForm.isActive === "" ? null : userForm.isActive);
+    setIsStatusActive(userForm.isActive);
+    setIsPosting(false);
   }, [userForm]);
 
   const formElements = {
@@ -98,19 +100,26 @@ const useDashBoardForm = () => {
           name: "status",
           value: "ACTIVE",
           label: "Active",
+          checked: !!isStatusActive,
         },
         {
           name: "status",
           value: "INACTIVE",
           label: "Inactive",
+          checked: !isStatusActive,
         },
       ],
     },
   };
 
   const handleAddUser = () => {
+    setIsPosting(true);
+
+    const id = userForm.isEdit
+      ? userForm.id
+      : Number(pagination.totalLength) + Math.ceil(Math.random() * 100000);
     const postData = {
-      id: Number(pagination.totalLength) + Math.ceil(Math.random() * 100000),
+      id,
       name,
       email,
       gender,
@@ -124,10 +133,34 @@ const useDashBoardForm = () => {
       isAddNew: true,
     });
 
-    dispatch(
-      postNewUserData(postData, Math.ceil(pagination.totalLength / 8), newStats)
-    );
+    if (!userForm.isEdit) {
+      dispatch(
+        postNewUserData(
+          postData,
+          Math.ceil(pagination.totalLength / 8),
+          newStats,
+          handleClear,
+          () => {
+            setIsPosting(false);
+          }
+        )
+      );
+    } else {
+      dispatch(
+        putUpdatedUserData(id, postData, pagination.pageNumber, () => {
+          setIsPosting(false);
+        })
+      );
+    }
   };
+
+  const btnContent = isPosting ? (
+    <BeatLoader />
+  ) : userForm.isEdit ? (
+    <>UPDATE USER</>
+  ) : (
+    <>ADD USER</>
+  );
 
   return {
     formElements,
@@ -135,6 +168,8 @@ const useDashBoardForm = () => {
     isAllValid,
     handleClose,
     handleAddUser,
+    isPosting,
+    btnContent,
   };
 };
 

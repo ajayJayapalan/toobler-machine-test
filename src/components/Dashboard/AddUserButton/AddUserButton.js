@@ -7,6 +7,7 @@ import addUserIcon from "../../../assets/dashboard-list-assests/user-add.png";
 import hoverAddUserIcon from "../../../assets/dashboard-list-assests/hover-user-add.png";
 import { useDispatch } from "react-redux";
 import { openOverlay } from "../../../redux/actions/ui-actions";
+import { createNewForm } from './../../../redux/actions/form-actions';
 
 const useStyles = makeStyles((theme) => {
   return createStyles({
@@ -35,7 +36,6 @@ const useStyles = makeStyles((theme) => {
     },
     buttonForForm: {
       border: "1px solid red",
-      cursor: "pointer",
       display: "flex",
       padding: `${theme.spacing(1)} ${theme.spacing(1.2)}`,
       borderRadius: ".3rem",
@@ -63,6 +63,7 @@ const AddUserButton = ({
 
   const handleClick = (e) => {
     if (!isForForm || !isDisabled) {
+      dispatch(createNewForm());
       dispatch(openOverlay());
     }
     onClick(e);
@@ -73,9 +74,11 @@ const AddUserButton = ({
   return (
     <Box
       onClick={handleClick}
+      disabled={isDisabled}
       component={"button"}
       style={{
         backgroundColor: isDisabled && "grey",
+        cursor: !isDisabled && "pointer",
       }}
       className={!isForForm ? classes.button : classes.buttonForForm}
     >

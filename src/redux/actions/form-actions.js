@@ -2,6 +2,7 @@
 import axios from 'axios';
 import { FORM_TYPES } from './../type';
 import { APP_URL } from './../../utils/constants/URLS';
+import { openOverlay } from './ui-actions';
 
 export const createNewForm = () => dispatch => {
     dispatch({
@@ -15,5 +16,6 @@ export const updateNewForm = (id) => dispatch => {
             type: FORM_TYPES.UPDATE_FORM,
             payload: res.data,
         })
+        dispatch(openOverlay());
     })
 }

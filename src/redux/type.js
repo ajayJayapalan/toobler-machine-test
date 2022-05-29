@@ -7,6 +7,8 @@ export const DATA_TYPES = {
 export const UI_TYPES = {
   OPEN_OVERLAY:"OPEN_OVERLAY",
   CLOSE_OVERLAY:"CLOSE_OVERLAY",
+  LOADING:"LOADING",
+  STOP_LOADING:"STOP_LOADING",
 };
 
 export const FORM_TYPES = {

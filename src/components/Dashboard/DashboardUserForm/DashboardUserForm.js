@@ -11,6 +11,7 @@ import FormRadio from "./../../common/FormRadio";
 import AddUserButton from "./../AddUserButton/AddUserButton";
 
 import closeIcon from "../../../assets/dashboard-list-assests/close-icon.png";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => {
   return createStyles({
@@ -45,11 +46,21 @@ const useStyles = makeStyles((theme) => {
 const DashboardUserForm = () => {
   const classes = useStyles();
 
-  const { formElements, handleClose, handleClear, handleAddUser, isAllValid, } =
-    useDashBoardForm();
+  const {
+    formElements,
+    handleClose,
+    handleClear,
+    handleAddUser,
+    isAllValid,
+    btnContent,
+  } = useDashBoardForm();
+
+  const {
+    UI: { isOverlayVisible },
+  } = useSelector((state) => state);
 
   return (
-    <Overlay>
+    <Overlay isVisible={isOverlayVisible}>
       <GlassyCard>
         <Paper className={classes.container}>
           <Box className={classes.topSection}>
@@ -70,10 +81,12 @@ const DashboardUserForm = () => {
             <FormRadio {...formElements.status} />
           </Box>
           <Box sx={{ display: "flex", gap: "1rem" }}>
-            <AddUserButton isForForm
-            isDisabled={!isAllValid}
-             onClick={handleAddUser}>
-              ADD USER
+            <AddUserButton
+              isForForm
+              isDisabled={!isAllValid}
+              onClick={handleAddUser}
+            >
+              {btnContent}
             </AddUserButton>
             <Button
               style={{

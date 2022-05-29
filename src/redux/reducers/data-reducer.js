@@ -3,10 +3,6 @@ import { DATA_TYPES } from "./../type";
 
 const initialState = {
   dashboardStatistics: generateStats(),
-  isLoading: {
-    statistics: false,
-    table: false,
-  },
   dashboardUserList: {
     tableHead:["Sl No","Name","Email","Gender","Actions","Status"],
     tableContent: [],

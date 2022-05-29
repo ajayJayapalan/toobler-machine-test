@@ -11,3 +11,13 @@ export const closeOverlay = () => (dispatch) => {
         type: UI_TYPES.CLOSE_OVERLAY,
       });
 }
+export const startLoading = () => (dispatch) => {
+    dispatch({
+        type: UI_TYPES.LOADING,
+      });
+}
+export const stopLoading = () => (dispatch) => {
+    dispatch({
+        type: UI_TYPES.STOP_LOADING,
+      });
+}

@@ -1,7 +1,6 @@
 import React from "react";
 import { createStyles, makeStyles } from "@mui/styles";
 import { Box } from "@mui/material";
-import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => {
   return createStyles({
@@ -20,16 +19,15 @@ const useStyles = makeStyles((theme) => {
   });
 });
 
-const Overlay = ({ children }) => {
+const Overlay = ({ children, isVisible, isForLoader }) => {
   const classes = useStyles();
-  const {
-    UI: { isOverlayVisible },
-  } = useSelector((state) => state);
 
   return (
     <Box
       sx={{
-        display: !isOverlayVisible && "none",
+        display: !isVisible && "none",
+        backgroundColor:  isForLoader && "#cccccc50",
+        backdropFilter: isForLoader && "blur(10px)",
       }}
       className={classes.overlay}
     >
