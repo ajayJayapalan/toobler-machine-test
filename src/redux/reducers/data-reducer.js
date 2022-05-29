@@ -2,7 +2,15 @@ import { DATA_TYPES } from "./../type";
 
 const initialState = {
   dashboardStatistics: [],
-  loading: false,
+  isLoading: {
+    statistics: false,
+    table: false,
+  },
+  dashboardUserList: {
+    tableHead:["Sl No","Name","Email","Gender","Actions","Status"],
+    tableContent: [],
+    pageNumber: 1,
+  },
 };
 
 export default function dataReducer(state = initialState, action) {
@@ -12,6 +20,15 @@ export default function dataReducer(state = initialState, action) {
         ...state,
         dashboardStatistics: action.payload,
       };
+    case DATA_TYPES.GET_DASHBOARD_USER_LIST:
+      return {
+        ...state,
+        dashboardUserList: {
+          ...state.dashboardUserList,
+          tableContent: action.payload,
+        },
+      };
+    
     default:
       return { ...state };
   }

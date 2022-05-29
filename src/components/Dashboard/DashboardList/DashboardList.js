@@ -1,10 +1,11 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Paper, Typography } from "@mui/material";
 import { Box } from "@mui/material";
 import { createStyles, makeStyles } from "@mui/styles";
 import AddUserButton from "./../AddUserButton/AddUserButton";
 import DashboardTable from "../DashBoardTable/DashboardTable";
+import { getDashboardUserList } from "../../../redux/actions/data-actions";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -26,6 +27,16 @@ const useStyles = makeStyles((theme) =>
 const DashboardList = () => {
   const classes = useStyles();
 
+  const dispatch = useDispatch();
+  const {
+    data: { dashboardUserList },
+  } = useSelector((state) => state);
+
+  useEffect(() => {
+    dispatch(getDashboardUserList());
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <Paper className={classes.listContainer}>
       <Box className={classes.topContainer}>
@@ -39,7 +50,10 @@ const DashboardList = () => {
         <AddUserButton>ADD USER</AddUserButton>
       </Box>
       <Box>
-        <DashboardTable />
+        <DashboardTable
+          tableHead={dashboardUserList.tableHead}
+          tableContent={dashboardUserList.tableContent}
+        />
       </Box>
     </Paper>
   );

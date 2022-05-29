@@ -1,24 +1,726 @@
 {
-    "dashboard-statistics":[
-        {
-            "id": 1,
-            "text":"Total Users",
-            "count": "357 people"
-        },
-        {
-            "id": 2,
-            "text":"Total Males",
-            "count": "69 males"
-        },
-        {
-            "id": 3,
-            "text":"Total Females",
-            "count": "288 females"
-        },
-        {
-            "id": 4,
-            "text":"Total Active",
-            "count": "50 people"
-        }
+    "dashboard-statistics": [
+      {
+        "id": 1,
+        "text": "Total Users",
+        "count": "100 people"
+      },
+      {
+        "id": 2,
+        "text": "Total Males",
+        "count": "46 males"
+      },
+      {
+        "id": 3,
+        "text": "Total Females",
+        "count": "54 females"
+      },
+      {
+        "id": 4,
+        "text": "Total Active",
+        "count": "46 people"
+      }
+    ],
+    "all-dashboard-users": [
+      {
+        "id": 1,
+        "name": "Ms. Alonzo Nitzsche",
+        "email": "ms..alonzo.nitzsche6@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 2,
+        "name": "Shaun Nolan",
+        "email": "shaun.nolan3@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 3,
+        "name": "Jean Reynolds",
+        "email": "jean.reynolds0@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 4,
+        "name": "Lester Mitchell",
+        "email": "lester.mitchell4@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 5,
+        "name": "Mildred Balistreri",
+        "email": "mildred.balistreri1@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 6,
+        "name": "Mildred Bins",
+        "email": "mildred.bins5@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 7,
+        "name": "Miss Johnnie Langworth",
+        "email": "miss.johnnie.langworth8@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 8,
+        "name": "Andy Krajcik",
+        "email": "andy.krajcik6@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 9,
+        "name": "Alejandro Bailey",
+        "email": "alejandro.bailey9@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 10,
+        "name": "Edward McGlynn",
+        "email": "edward.mcglynn2@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 11,
+        "name": "Linda Jenkins",
+        "email": "linda.jenkins6@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 12,
+        "name": "Cody Prohaska",
+        "email": "cody.prohaska7@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 13,
+        "name": "Ora Dickinson",
+        "email": "ora.dickinson4@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 14,
+        "name": "Andrew Mayert",
+        "email": "andrew.mayert0@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 15,
+        "name": "Emmett Terry",
+        "email": "emmett.terry2@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 16,
+        "name": "Dana Douglas",
+        "email": "dana.douglas2@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 17,
+        "name": "Joey Bode",
+        "email": "joey.bode9@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 18,
+        "name": "Whitney Lindgren",
+        "email": "whitney.lindgren2@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 19,
+        "name": "Donnie West",
+        "email": "donnie.west4@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 20,
+        "name": "Carlton Spinka",
+        "email": "carlton.spinka9@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 21,
+        "name": "Sean Herzog",
+        "email": "sean.herzog5@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 22,
+        "name": "Elbert Feeney",
+        "email": "elbert.feeney7@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 23,
+        "name": "Loretta Senger MD",
+        "email": "loretta.senger.md6@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 24,
+        "name": "Sidney Krajcik",
+        "email": "sidney.krajcik6@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 25,
+        "name": "Bessie Boyer",
+        "email": "bessie.boyer4@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 26,
+        "name": "Billy Mohr",
+        "email": "billy.mohr1@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 27,
+        "name": "Pedro Bergnaum",
+        "email": "pedro.bergnaum6@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 28,
+        "name": "Bennie Fritsch",
+        "email": "bennie.fritsch3@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 29,
+        "name": "Ms. Bernice Goyette",
+        "email": "ms..bernice.goyette5@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 30,
+        "name": "Arturo Lowe",
+        "email": "arturo.lowe5@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 31,
+        "name": "Cathy Schimmel I",
+        "email": "cathy.schimmel.i7@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 32,
+        "name": "Clifton Feil Sr.",
+        "email": "clifton.feil.sr.0@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 33,
+        "name": "Valerie Rath",
+        "email": "valerie.rath1@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 34,
+        "name": "Joey Lebsack",
+        "email": "joey.lebsack3@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 35,
+        "name": "Ms. Jimmy Heaney",
+        "email": "ms..jimmy.heaney2@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 36,
+        "name": "Molly Ferry",
+        "email": "molly.ferry7@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 37,
+        "name": "Gail Schulist",
+        "email": "gail.schulist0@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 38,
+        "name": "Jaime Gottlieb",
+        "email": "jaime.gottlieb8@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 39,
+        "name": "Anthony Boehm",
+        "email": "anthony.boehm3@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 40,
+        "name": "Jeanne Wunsch",
+        "email": "jeanne.wunsch1@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 41,
+        "name": "Mark Schuppe",
+        "email": "mark.schuppe3@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 42,
+        "name": "Dawn Thiel",
+        "email": "dawn.thiel4@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 43,
+        "name": "Rene Bradtke",
+        "email": "rene.bradtke2@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 44,
+        "name": "Hector Rosenbaum",
+        "email": "hector.rosenbaum1@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 45,
+        "name": "Clyde Waelchi",
+        "email": "clyde.waelchi4@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 46,
+        "name": "Candace VonRueden",
+        "email": "candace.vonrueden9@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 47,
+        "name": "Miss Ryan Hammes",
+        "email": "miss.ryan.hammes1@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 48,
+        "name": "Cody Lemke",
+        "email": "cody.lemke9@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 49,
+        "name": "Kelly Rosenbaum",
+        "email": "kelly.rosenbaum3@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 50,
+        "name": "Denise Bogan",
+        "email": "denise.bogan4@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 51,
+        "name": "Brandi Kris",
+        "email": "brandi.kris0@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 52,
+        "name": "Sean Herzog I",
+        "email": "sean.herzog.i2@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 53,
+        "name": "Lee Bartell",
+        "email": "lee.bartell9@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 54,
+        "name": "Seth Jast",
+        "email": "seth.jast4@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 55,
+        "name": "Joey Pacocha",
+        "email": "joey.pacocha5@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 56,
+        "name": "Hannah Heathcote",
+        "email": "hannah.heathcote3@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 57,
+        "name": "Sonya Mueller",
+        "email": "sonya.mueller8@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 58,
+        "name": "Clifford Lesch DDS",
+        "email": "clifford.lesch.dds8@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 59,
+        "name": "Peggy Shanahan",
+        "email": "peggy.shanahan9@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 60,
+        "name": "Amelia Wiza",
+        "email": "amelia.wiza7@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 61,
+        "name": "Alexander Wyman",
+        "email": "alexander.wyman9@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 62,
+        "name": "Shaun Larson",
+        "email": "shaun.larson3@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 63,
+        "name": "Bruce Kling",
+        "email": "bruce.kling0@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 64,
+        "name": "Miss Lisa Ernser",
+        "email": "miss.lisa.ernser1@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 65,
+        "name": "Annette Corwin",
+        "email": "annette.corwin3@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 66,
+        "name": "Gilbert Lehner",
+        "email": "gilbert.lehner2@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 67,
+        "name": "Roosevelt Abshire",
+        "email": "roosevelt.abshire9@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 68,
+        "name": "Grant McClure",
+        "email": "grant.mcclure6@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 69,
+        "name": "Theodore Veum",
+        "email": "theodore.veum5@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 70,
+        "name": "Douglas Bailey",
+        "email": "douglas.bailey5@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 71,
+        "name": "Emmett Lowe V",
+        "email": "emmett.lowe.v9@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 72,
+        "name": "Erick Larkin",
+        "email": "erick.larkin2@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 73,
+        "name": "Marty Heaney",
+        "email": "marty.heaney5@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 74,
+        "name": "Flora Reinger",
+        "email": "flora.reinger7@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 75,
+        "name": "Alice Volkman",
+        "email": "alice.volkman2@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 76,
+        "name": "Louis Mohr",
+        "email": "louis.mohr3@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 77,
+        "name": "Guillermo Bosco PhD",
+        "email": "guillermo.bosco.phd0@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 78,
+        "name": "Gregory Hauck",
+        "email": "gregory.hauck7@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 79,
+        "name": "Wilbur Gerhold",
+        "email": "wilbur.gerhold1@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 80,
+        "name": "Sue Lesch",
+        "email": "sue.lesch6@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 81,
+        "name": "Bobby Moen Sr.",
+        "email": "bobby.moen.sr.9@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 82,
+        "name": "Fannie Corwin",
+        "email": "fannie.corwin6@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 83,
+        "name": "Jackie Rodriguez",
+        "email": "jackie.rodriguez8@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 84,
+        "name": "Chelsea Tillman",
+        "email": "chelsea.tillman0@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 85,
+        "name": "Mrs. Donald Klocko",
+        "email": "mrs..donald.klocko5@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 86,
+        "name": "Stewart Bogisich",
+        "email": "stewart.bogisich5@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 87,
+        "name": "Kristina Medhurst III",
+        "email": "kristina.medhurst.iii8@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 88,
+        "name": "Angel Zboncak",
+        "email": "angel.zboncak0@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 89,
+        "name": "Lindsey Price",
+        "email": "lindsey.price7@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 90,
+        "name": "Ramon Nikolaus",
+        "email": "ramon.nikolaus0@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 91,
+        "name": "Alan Graham",
+        "email": "alan.graham3@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 92,
+        "name": "Ms. Cecilia Sanford",
+        "email": "ms..cecilia.sanford2@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      },
+      {
+        "id": 93,
+        "name": "Doug Mertz",
+        "email": "doug.mertz9@gamil.com",
+        "gender": "FEMALE",
+        "isActive": false
+      },
+      {
+        "id": 94,
+        "name": "Morris Hills DVM",
+        "email": "morris.hills.dvm5@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 95,
+        "name": "Sheryl Howell",
+        "email": "sheryl.howell0@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 96,
+        "name": "Phil Heller",
+        "email": "phil.heller6@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 97,
+        "name": "Winston Kling",
+        "email": "winston.kling9@gamil.com",
+        "gender": "FEMALE",
+        "isActive": true
+      },
+      {
+        "id": 98,
+        "name": "Ms. Bernadette Luettgen",
+        "email": "ms..bernadette.luettgen3@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 99,
+        "name": "Nick Gibson",
+        "email": "nick.gibson8@gamil.com",
+        "gender": "MALE",
+        "isActive": false
+      },
+      {
+        "id": 100,
+        "name": "Edmund Thompson",
+        "email": "edmund.thompson1@gamil.com",
+        "gender": "MALE",
+        "isActive": true
+      }
     ]
-}
+  }
