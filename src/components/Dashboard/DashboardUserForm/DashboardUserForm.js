@@ -45,7 +45,8 @@ const useStyles = makeStyles((theme) => {
 const DashboardUserForm = () => {
   const classes = useStyles();
 
-  const { formElements } = useDashBoardForm();
+  const { formElements, handleClose, handleClear, handleAddUser, isAllValid, } =
+    useDashBoardForm();
 
   return (
     <Overlay>
@@ -60,7 +61,7 @@ const DashboardUserForm = () => {
             >
               USERS
             </Typography>
-            <img src={closeIcon} alt="close icon" />
+            <img onClick={handleClose} src={closeIcon} alt="close icon" />
           </Box>
           <Box className={classes.formContainer}>
             <FormInput {...formElements.name} />
@@ -69,11 +70,16 @@ const DashboardUserForm = () => {
             <FormRadio {...formElements.status} />
           </Box>
           <Box sx={{ display: "flex", gap: "1rem" }}>
-            <AddUserButton isForForm>ADD USER</AddUserButton>
+            <AddUserButton isForForm
+            isDisabled={!isAllValid}
+             onClick={handleAddUser}>
+              ADD USER
+            </AddUserButton>
             <Button
               style={{
                 color: "#aaa",
               }}
+              onClick={handleClear}
             >
               CLEAR
             </Button>

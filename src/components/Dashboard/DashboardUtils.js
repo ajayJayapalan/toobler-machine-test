@@ -13,35 +13,40 @@ export const UserStatusTableCell = ({ isActive = true }) => (
 );
 
 const ActionButton = ({ isEdit = false, children, ...restProps }) => {
-    return (
-      <Box
-        sx={{
-          display: "flex",
-          gap: "0.3rem",
-          cursor: "pointer",
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        gap: "0.3rem",
+        cursor: "pointer",
+      }}
+      {...restProps}
+    >
+      <img
+        style={{
+          height: "1rem",
         }}
-        {...restProps}
-      >
-        <img
-          style={{
-            height: "1rem",
-          }}
-          src={isEdit ? editIcon : deleteIcon}
-          alt={children}
-        />
-        <span>{children}</span>
-      </Box>
-    );
-  };
+        src={isEdit ? editIcon : deleteIcon}
+        alt={children}
+      />
+      <span>{children}</span>
+    </Box>
+  );
+};
 
-  export const ActionButtons = () => {
-      return  <Box
+export const ActionButtons = ({ onEdit, onDelete }) => {
+  return (
+    <Box
       sx={{
         display: "flex",
         gap: ".7rem",
       }}
     >
-      <ActionButton isEdit> edit</ActionButton>
-      <ActionButton> delete</ActionButton>
+      <ActionButton onClick={onEdit} isEdit>
+        {" "}
+        edit
+      </ActionButton>
+      <ActionButton onClick={onDelete}> delete</ActionButton>
     </Box>
-  }
+  );
+};

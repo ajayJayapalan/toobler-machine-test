@@ -1,7 +1,8 @@
+import { generateStats } from "../../utils/helper/helper-function";
 import { DATA_TYPES } from "./../type";
 
 const initialState = {
-  dashboardStatistics: [],
+  dashboardStatistics: generateStats(),
   isLoading: {
     statistics: false,
     table: false,

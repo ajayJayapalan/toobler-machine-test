@@ -5,6 +5,8 @@ import { Box, Typography } from "@mui/material";
 
 import addUserIcon from "../../../assets/dashboard-list-assests/user-add.png";
 import hoverAddUserIcon from "../../../assets/dashboard-list-assests/hover-user-add.png";
+import { useDispatch } from "react-redux";
+import { openOverlay } from "../../../redux/actions/ui-actions";
 
 const useStyles = makeStyles((theme) => {
   return createStyles({
@@ -49,37 +51,32 @@ const useStyles = makeStyles((theme) => {
   });
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const AddUserButton = ({ children = "ADD USER", isForForm }) => {
+const AddUserButton = ({
+  children = "ADD USER",
+  isForForm,
+  onClick = () => {},
+  isDisabled = false,
+}) => {
   const classes = useStyles();
+
+  const dispatch = useDispatch();
+
+  const handleClick = (e) => {
+    if (!isForForm || !isDisabled) {
+      dispatch(openOverlay());
+    }
+    onClick(e);
+  };
+
+
 
   return (
     <Box
+      onClick={handleClick}
       component={"button"}
+      style={{
+        backgroundColor: isDisabled && "grey",
+      }}
       className={!isForForm ? classes.button : classes.buttonForForm}
     >
       <img className={classes.btnImg} alt="add user" src={addUserIcon} />

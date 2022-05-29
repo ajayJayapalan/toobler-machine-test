@@ -1,11 +1,30 @@
-import { useState } from "react";
-import { isEmailValid } from "./../../../utils/helper/helper-function";
+import { useEffect, useState } from "react";
+import {
+  buildStats,
+  generateStats,
+  isEmailValid,
+} from "./../../../utils/helper/helper-function";
+import { useDispatch } from "react-redux";
+import { closeOverlay } from "../../../redux/actions/ui-actions";
+import { useSelector } from "react-redux";
+import { postNewUserData } from "../../../redux/actions/data-actions";
 
 const useDashBoardForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [gender, setGender] = useState("");
   const [isStatusActive, setIsStatusActive] = useState(null);
+
+  const dispatch = useDispatch();
+  const {
+    data: {
+      dashboardUserList: { pagination },
+      dashboardStatistics,
+    },
+    userForm,
+  } = useSelector((s) => s);
+
+  const handleClose = () => dispatch(closeOverlay());
 
   const handleClear = () => {
     setName("");
@@ -22,6 +41,13 @@ const useDashBoardForm = () => {
   );
 
   const onTextChange = (e, setState) => setState(e.target.value);
+
+  useEffect(() => {
+    setName(userForm.name);
+    setEmail(userForm.email);
+    setGender(userForm.gender);
+    setIsStatusActive(userForm.isActive === "" ? null : userForm.isActive);
+  }, [userForm]);
 
   const formElements = {
     name: {
@@ -82,10 +108,33 @@ const useDashBoardForm = () => {
     },
   };
 
+  const handleAddUser = () => {
+    const postData = {
+      id: Number(pagination.totalLength) + Math.ceil(Math.random() * 100000),
+      name,
+      email,
+      gender,
+      isActive: !!isStatusActive,
+    };
+
+    const newStats = buildStats({
+      data: dashboardStatistics,
+      isFemale: gender === "FEMALE",
+      isActive: !!isStatusActive,
+      isAddNew: true,
+    });
+
+    dispatch(
+      postNewUserData(postData, Math.ceil(pagination.totalLength / 8), newStats)
+    );
+  };
+
   return {
     formElements,
     handleClear,
     isAllValid,
+    handleClose,
+    handleAddUser,
   };
 };
 

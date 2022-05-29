@@ -1,6 +1,7 @@
 import axios from "axios";
 import { APP_URL } from "./../../utils/constants/URLS";
 import { DATA_TYPES } from "./../type";
+import { closeOverlay } from "./ui-actions";
 
 export const getDashboardStatistics = () => (dispatch) => {
   axios
@@ -8,7 +9,7 @@ export const getDashboardStatistics = () => (dispatch) => {
     .then((res) => {
       dispatch({
         type: DATA_TYPES.GET_DASHBOARD_STATISTICS_DATA,
-        payload: res.data,
+        payload: res.data.list,
       });
     })
     .catch((err) => {
@@ -43,3 +44,41 @@ export const updatePageNumber = (pageNumber, totalLength, dispatch) => {
     },
   });
 };
+
+export const postNewUserData = (postData, pageNumber, newStat) => (dispatch) => {
+  axios
+    .post(`${APP_URL}/all-dashboard-users`, postData)
+    .then((res) => {
+      dispatch(closeOverlay());
+      dispatch(getDashboardUserList(pageNumber));
+      dispatch(updateUserStats(newStat));
+    })
+    .catch((error) => {
+      console.log("====error @postNewUserData====", error);
+    });
+};
+
+export const deleteUserData = (id, pageNumber, newStat) => (dispatch) => {
+  axios
+    .delete(`${APP_URL}/all-dashboard-users/${id}`)
+    .then((res) => {
+      dispatch(getDashboardUserList(pageNumber));
+      dispatch(updateUserStats(newStat));
+    })
+    .catch((error) => {
+      console.log("====error @deleteUserData====", error);
+    });
+};
+
+const updateUserStats = (newData) => (dispatch) => {
+  axios
+    .post(`${APP_URL}/dashboard-statistics`,{
+      list: newData,
+    })
+    .then((res) => {
+      dispatch(getDashboardStatistics());
+    })
+    .catch((err) => {
+      console.error("=======error @updateUserStats=========", err);
+    });
+}
