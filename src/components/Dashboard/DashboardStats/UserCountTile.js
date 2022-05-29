@@ -2,7 +2,7 @@ import { Box, Paper, Typography } from "@mui/material";
 import React from "react";
 import { makeStyles } from "@mui/styles";
 import { createStyles } from "@mui/styles";
-import { getUserTileIcon } from './../../utils/helper/dashboard-stat-image-finder';
+import { getUserTileIcon } from '../../../utils/helper/dashboard-stat-image-finder';
 
 const useStyles = makeStyles((theme) => {
   return createStyles({

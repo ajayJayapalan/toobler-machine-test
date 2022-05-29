@@ -4,8 +4,7 @@ import UserCountTile from "./UserCountTile";
 import { useDispatch, useSelector } from "react-redux";
 
 import { makeStyles } from "@mui/styles";
-// import { getDashboardStatistics } from "./../../apis/dashBoardServices";
-import { getDashboardStatistics } from "./../../redux/actions/data-actions";
+import { getDashboardStatistics } from "../../../redux/actions/data-actions";
 
 const useStyles = makeStyles({
   statsContainer: {
@@ -25,6 +24,7 @@ const DashboardStats = () => {
 
   useEffect(() => {
     dispatch(getDashboardStatistics());
+    // eslint-disable-next-line
   }, []);
 
   return (

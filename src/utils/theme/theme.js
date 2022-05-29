@@ -6,7 +6,7 @@ export const theme = createTheme({
       main: "#F33D63",
     },
     secondary: {
-      main: "#545ABA",
+      main: "#fff",
     },
     text: {
       primary: "#4f4f4f",
@@ -18,10 +18,12 @@ export const theme = createTheme({
     secondary: "#545ABA",
 
     primaryText: "#4f4f4f",
-    secondaryText: "#94979B",
+    secondaryText: "#94979B90",
 
-    glassyBg: "#ffffff20",
-    glassyBorder: "#ffffff50",
+    glassyBg: "#ffffff50",
+    glassyBorder: "#ffffff70",
+
+    white:"#fff",
   },
   typography: {
     fontFamily: "Nunito",
