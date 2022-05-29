@@ -4,7 +4,7 @@
       {
         "id": 1,
         "text": "Total Users",
-        "count": "19 people"
+        "count": "18 people"
       },
       {
         "id": 2,
@@ -14,7 +14,7 @@
       {
         "id": 3,
         "text": "Total Females",
-        "count": "11 females"
+        "count": "10 females"
       },
       {
         "id": 4,
@@ -149,13 +149,6 @@
       "email": "alexander.bins1@gamil.com",
       "gender": "MALE",
       "isActive": true
-    },
-    {
-      "id": 18939,
-      "name": "Beena",
-      "email": "beena@mail.com",
-      "gender": "FEMALE",
-      "isActive": false
     }
   ]
 }

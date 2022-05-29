@@ -75,7 +75,7 @@ const PaginateItem = ({ children, isActive = false, ...restProps }) => {
     <Box
       className={paginateClass}
       sx={{
-        backgroundColor: isActive ? theme.custom.primary : "#E1E1EF",
+        backgroundColor: isActive ? theme.custom.primary : "white",
       }}
       {...restProps}
     >
