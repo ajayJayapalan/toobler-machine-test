@@ -3,6 +3,8 @@ import { APP_URL } from "./../../utils/constants/URLS";
 import { DATA_TYPES } from "./../type";
 import { closeOverlay, startLoading, stopLoading } from "./ui-actions";
 
+import {  toast } from 'react-toastify';
+
 export const getDashboardStatistics = () => (dispatch) => {
   dispatch(startLoading());
   axios
@@ -56,15 +58,18 @@ export const updatePageNumber = (pageNumber, totalLength, dispatch) => {
 export const postNewUserData =
   (postData, pageNumber, newStat, cb = () => {}) =>
   (dispatch) => {
+    
     axios
       .post(`${APP_URL}/all-dashboard-users`, postData)
       .then((res) => {
         dispatch(closeOverlay());
         dispatch(getDashboardUserList(pageNumber));
         dispatch(updateUserStats(newStat));
+        toast("User Created Succesfully.");
         // clear();
       })
       .catch((error) => {
+        toast("Something went wrong when creating user.");
         console.log("====error @postNewUserData====", error);
       })
       .finally(() => {
@@ -72,16 +77,18 @@ export const postNewUserData =
       });
   };
 
-export const putUpdatedUserData =
+  export const putUpdatedUserData =
   (id, postData, pageNumber, cb = () => {}) =>
   (dispatch) => {
     axios
-      .put(`${APP_URL}/all-dashboard-users/${id}`, postData)
-      .then((res) => {
-        dispatch(closeOverlay());
-        dispatch(getDashboardUserList(pageNumber));
+    .put(`${APP_URL}/all-dashboard-users/${id}`, postData)
+    .then((res) => {
+      dispatch(closeOverlay());
+      dispatch(getDashboardUserList(pageNumber));
+      toast("User data updated Succesfully.");
       })
       .catch((error) => {
+        toast("Something went wrong when updating user.");
         console.log("====error @postNewUserData====", error);
       })
       .finally(() => {
@@ -95,8 +102,10 @@ export const deleteUserData = (id, pageNumber, newStat) => (dispatch) => {
     .then((res) => {
       dispatch(getDashboardUserList(pageNumber));
       dispatch(updateUserStats(newStat));
+      toast(`You deleted a user with id:${id}`);
     })
     .catch((error) => {
+      toast(`User with id:${id} is not deleted.`);
       console.log("====error @deleteUserData====", error);
     });
 };

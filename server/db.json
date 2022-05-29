@@ -4,12 +4,12 @@
       {
         "id": 1,
         "text": "Total Users",
-        "count": "18 people"
+        "count": "19 people"
       },
       {
         "id": 2,
         "text": "Total Males",
-        "count": "8 males"
+        "count": "9 males"
       },
       {
         "id": 3,
@@ -19,7 +19,7 @@
       {
         "id": 4,
         "text": "Total Active",
-        "count": "11 people"
+        "count": "12 people"
       }
     ]
   },
@@ -147,6 +147,13 @@
       "id": 20,
       "name": "Alexander Bins",
       "email": "alexander.bins1@gamil.com",
+      "gender": "MALE",
+      "isActive": true
+    },
+    {
+      "id": 68645,
+      "name": "Jaymon",
+      "email": "jaymon@gmail.com",
       "gender": "MALE",
       "isActive": true
     }
