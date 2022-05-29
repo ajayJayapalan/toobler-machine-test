@@ -1,0 +1,24 @@
+{
+    "dashboard-statistics":[
+        {
+            "id": 1,
+            "text":"Total Users",
+            "count": "357 people"
+        },
+        {
+            "id": 2,
+            "text":"Total Males",
+            "count": "69 males"
+        },
+        {
+            "id": 3,
+            "text":"Total Females",
+            "count": "288 females"
+        },
+        {
+            "id": 4,
+            "text":"Total Active",
+            "count": "50 people"
+        }
+    ]
+}

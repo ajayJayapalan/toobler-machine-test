@@ -1,5 +1,12 @@
+import HomeWrapper from "./components/home/HomeWrapper";
+import DashboardStats from "./components/DashboardStats/DashboardStats";
+
 function App() {
-  return <div className="App">hello world</div>;
+  return (
+    <HomeWrapper>
+      <DashboardStats />
+    </HomeWrapper>
+  );
 }
 
 export default App;
