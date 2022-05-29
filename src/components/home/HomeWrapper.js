@@ -1,7 +1,6 @@
 import React from "react";
 
 import { makeStyles } from "@mui/styles";
-import GlassyContainer from "../UI/GlassyContainer";
 
 import { Box } from "@mui/material";
 import GlassyCard from "../UI/GlassyCard";

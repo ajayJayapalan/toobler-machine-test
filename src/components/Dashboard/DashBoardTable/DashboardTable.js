@@ -10,13 +10,6 @@ import React from "react";
 
 import { ActionButtons, UserStatusTableCell } from "../DashboardUtils";
 
-const rows = new Array(10).fill({
-  name: "Ajay Jaypalan",
-  email: "ajayjaymon@gmail.com",
-  gender: "Male",
-  isAcive: true,
-});
-
 const DashboardTable = ({ tableHead = [], tableContent = [] }) => {
   return (
     <div>

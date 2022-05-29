@@ -7,7 +7,6 @@ import AddUserButton from "./../AddUserButton/AddUserButton";
 import DashboardTable from "../DashBoardTable/DashboardTable";
 import { getDashboardUserList } from "../../../redux/actions/data-actions";
 import DashboardPagination from './../DashboardPagination/DashboardPagination';
-import { getDashboardStatistics } from './../../../redux/actions/data-actions';
 
 const useStyles = makeStyles((theme) =>
   createStyles({

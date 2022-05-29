@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { isEmailValid } from "./../../../utils/helper/helper-function";
 
@@ -15,7 +14,7 @@ const useDashBoardForm = () => {
     setIsStatusActive(null);
   };
 
-  const isValid = !!(
+  const isAllValid = !!(
     name &&
     isEmailValid(email) &&
     gender &&
@@ -85,6 +84,8 @@ const useDashBoardForm = () => {
 
   return {
     formElements,
+    handleClear,
+    isAllValid,
   };
 };
 
